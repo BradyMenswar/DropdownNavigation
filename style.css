@@ -1,0 +1,72 @@
+:root {
+    --color-light: hsl(0, 0%, 98%);
+    --color-medium: hsl(0, 0%, 41%);
+    --color-dark:  hsl(0, 0%, 8%);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Epilogue", sans-serif;
+}
+.container {
+    display: flex;
+    align-self: center;
+    width: 90%;
+    flex-direction: row;
+    height: 100%;
+    /* border: 3px solid red; */
+    justify-content: flex-start;
+    gap: 100px;
+
+}
+
+.content {
+    display: flex;
+    width: 550px;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 5%;
+    gap: 40px;
+}
+
+.content h1 {
+    font-size: 80px;
+    font-weight: 700;
+}
+
+.content p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 55%;
+    line-height: 1.5;
+    color: var(--color-medium);
+}
+
+.learn-more {
+    border: none;
+    width: 8rem;
+    padding: 1em 1.5em;
+    border-radius: 1em;
+    font-weight: 700;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    
+}
+
+.company-images {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 0;
+}
+.main-picture {
+    height: 800px;
+    padding: 2%;
+}
