@@ -9,20 +9,130 @@
     padding: 0;
     margin: 0;
 }
+
 body {
+    font-family: "Epilogue", sans-serif;
+    background-color: var(--color-light);
+}
+
+.main-nav-bar {
     display: flex;
-    flex-direction: column;
+    background-color: var(--color-light);
+    height: 75px;
+    align-items: center;
+    padding: 30px;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.main-nav-bar .left-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.main-nav-bar .right-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-right: 2%;
+}
+
+.dropdown-button {
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-medium);
     font-family: "Epilogue", sans-serif;
 }
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-medium);
+}
+
+.dropdown-button:hover, .nav-link:hover {
+    color: var(--color-dark);
+}
+
+.register-button {
+    cursor: pointer;
+    text-align: center;
+    width: 7rem;
+    padding: 1em 1.5em;
+    border-radius: 1em;
+    border: 2px solid var(--color-dark);
+    font-size: 14px;
+    font-weight: 700;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-family: "Epilogue", sans-serif;
+}
+
+.register-button:hover, .register-button:active {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    left: 0px;
+    top: calc(100% + 1rem);
+    width: 190px;
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown.active > .dropdown-button + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0px);
+    pointer-events: auto;
+}
+.dropdown-item-container {
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: var(--color-medium);
+}
+
+.dropdown-item:hover {
+    color: var(--color-dark);
+}
+
 .container {
+    margin: 0 auto;
     display: flex;
     align-self: center;
     width: 90%;
     flex-direction: row;
     height: 100%;
-    /* border: 3px solid red; */
-    justify-content: flex-start;
-    gap: 100px;
+    justify-content: center;
+    gap: 250px;
 
 }
 
@@ -30,9 +140,8 @@ body {
     display: flex;
     width: 550px;
     flex-direction: column;
-    margin-top: 10%;
-    margin-left: 5%;
     gap: 40px;
+    padding-top: 10%;
 }
 
 .content h1 {
@@ -49,14 +158,21 @@ body {
 }
 
 .learn-more {
-    border: none;
+    cursor: pointer;
     width: 8rem;
     padding: 1em 1.5em;
     border-radius: 1em;
+    border: 2px solid var(--color-dark);
+    font-size: 14px;
     font-weight: 700;
     background-color: var(--color-dark);
     color: var(--color-light);
-    
+    font-family: "Epilogue", sans-serif;
+}
+
+.learn-more:hover, .learn-more:active {
+    background-color: var(--color-light);
+    color: var(--color-dark);
 }
 
 .company-images {

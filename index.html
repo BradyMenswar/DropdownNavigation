@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+
+  <script src="script.js"></script>
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -20,14 +22,48 @@
 <body>
   <nav class="main-nav-bar">
     <div class="left-section">
-      <img src="" alt="snap">
-      <button>Features</button>
-      <button>Company</button>
-      <a href="">Careers</a>
-      <a href="">About</a>
+      <img src="images/logo.svg" alt="snap">
+      <div class="dropdown" data-dropdown>
+        <button class="dropdown-button" data-dropdown-button>
+          Features
+          <img class="arrow" src="images/icon-arrow-down.svg" alt="">
+        </button>
+        <div class="dropdown-menu">
+          <div class="dropdown-item-container">
+            <img width="18px" src="images/icon-todo.svg" alt="">
+            <a class="dropdown-item" href="#">Todo List</a>
+          </div>
+          <div class="dropdown-item-container">
+            <img width="18px"  src="images/icon-calendar.svg" alt="">
+            <a class="dropdown-item" href="#">Calender</a>
+          </div>
+          <div class="dropdown-item-container">
+            <img width="18px"  src="images/icon-reminders.svg" alt="">
+            <a class="dropdown-item" href="#">Reminders</a>
+          </div>
+          <div class="dropdown-item-container">
+            <img width="18px"  src="images/icon-planning.svg" alt="">
+            <a class="dropdown-item" href="#">Planning</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropdown-button">
+          Company
+          <img class="arrow" src="images/icon-arrow-down.svg" alt="">
+        </button>
+        <!-- <div class="dropdown-menu">
+
+        </div> -->
+
+      </div>
+
+      <a class="nav-link" href="#">Careers</a>
+      <a class="nav-link" href="#">About</a>
     </div>
     <div class="right-section">
-      <a href="">Login</a>
+      <a class="nav-link" href="">Login</a>
       <button class="register-button">Register</button>
     </div>
   </nav>
@@ -48,7 +84,7 @@
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/BradyMenswar">Brady Menswar</a>.
   </div>
 </body>
 </html>
