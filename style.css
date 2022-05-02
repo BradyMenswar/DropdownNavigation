@@ -21,7 +21,8 @@ body {
     height: 75px;
     align-items: center;
     padding: 30px;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 30px;
     font-size: 18px;
 }
 
@@ -36,6 +37,7 @@ body {
     align-items: center;
     gap: 50px;
     padding-right: 2%;
+    margin-left: 35%;
 }
 
 .dropdown-button {
@@ -251,5 +253,55 @@ body {
         width: 70px;
         
     }
+    .main-nav-bar {
+        justify-content: flex-start;
+        align-items: flex-start;
+        position:relative;
+    }
+    .main-nav-bar .left-section {
+        flex-direction: column;
+    }
+    .main-nav-bar .right-section {
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .main-nav-bar .right-section,
+    .main-nav-bar .left-section {
+        opacity: 0;
+        pointer-events: none;
 
+    }
+    .mobile-menu {
+        position: absolute;
+        right: 20px;
+        z-index: 1;
+
+        align-self: center;
+        background-image: url("images/icon-menu.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 35px;
+        height: 30px;
+    }
+    .pop-out-menu {
+        background-color: white;
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        height: 100vh;
+        width: 60%;
+        transform: translateX(100);
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    }
+    .active > .mobile-menu {
+        background-image: url("images/icon-close-menu.svg")
+    }
+
+    .active > .mobile-menu + .pop-out-menu {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
