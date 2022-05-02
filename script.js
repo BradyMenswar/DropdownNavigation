@@ -6,7 +6,6 @@ document.addEventListener('click', e => {
     let currentDropdown
     let currentMobileMenu
     if(isDropdownButton) {
-        console.log("TEST!")
         currentDropdown = e.target.closest('[data-dropdown]')
         currentDropdown.classList.toggle('active')  
     }
