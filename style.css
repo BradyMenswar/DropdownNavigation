@@ -17,6 +17,7 @@ body {
 
 .main-nav-bar {
     display: flex;
+    flex-direction: row;
     background-color: var(--color-light);
     height: 75px;
     align-items: center;
@@ -29,6 +30,8 @@ body {
 .main-nav-bar .left-section {
     display: flex;
     align-items: center;
+    font-weight: 700;
+    margin-left: 2%;
     gap: 50px;
 }
 
@@ -37,7 +40,7 @@ body {
     align-items: center;
     gap: 50px;
     padding-right: 2%;
-    margin-left: 35%;
+    margin-left: 50%;
 }
 
 .dropdown-button {
@@ -48,7 +51,7 @@ body {
     cursor: pointer;
     background-color: transparent;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--color-medium);
     font-family: "Epilogue", sans-serif;
 }
@@ -118,6 +121,7 @@ body {
 
 .dropdown.active > .dropdown-button + .dropdown-menu {
     opacity: 1;
+    display: flex;
     transform: translateY(0px);
     pointer-events: auto;
 }
@@ -147,11 +151,12 @@ body {
 .container {
     margin: 0 auto;
     display: flex;
-    align-self: center;
+    align-self: flex-end;
     width: 90%;
     flex-direction: row;
-    height: 100%;
+    height: 90%;
     justify-content: center;
+    align-items: flex-end;
     gap: 5%;
 
 }
@@ -160,13 +165,14 @@ body {
     display: flex;
     width: 40%;
     flex-direction: column;
-    gap: 40px;
+    gap: 60px;
     padding-top: 5%;
 }
 
 .content h1 {
     font-size: 80px;
     font-weight: 700;
+    white-space: pre-wrap;
 }
 
 .content p {
@@ -196,7 +202,7 @@ body {
 }
 
 .company-images {
-    margin-top: 1%;
+    margin-top: 5%;
     display: flex;
     align-items: center;
     gap: 50px;
@@ -204,6 +210,7 @@ body {
 }
 .main-picture {
     width: 40%;
+    max-width: 100%;
     height: 80vh;
     background-image: url("images/image-hero-desktop.png");
     background-position: center;
@@ -234,6 +241,7 @@ body {
     .content h1 {
         font-size: 30px;
         text-align: center;
+        white-space: normal;
     }
     .content p {
         margin: 0;
@@ -256,26 +264,45 @@ body {
     .main-nav-bar {
         justify-content: flex-start;
         align-items: flex-start;
-        position:relative;
+        position: relative;
+        flex-direction: column;
     }
     .main-nav-bar .left-section {
+        align-self: flex-end;
         flex-direction: column;
+        position: relative;
+        align-items: flex-start;
+        width: 200px;
+        left: 30px;
+        gap:20px;
     }
     .main-nav-bar .right-section {
+        align-self: flex-end;
         flex-direction: column;
-        margin-left: 0;
+        font-weight: 500;
+        left: 20px;
+    }
+
+
+    .register-button {
+        width: 12rem;
+        color: var(--color-dark);
+        background-color: var(--color-light);
     }
     .main-nav-bar .right-section,
     .main-nav-bar .left-section {
         opacity: 0;
+        z-index: 2;
         pointer-events: none;
+        transform: translateX(100px);
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 
     }
     .mobile-menu {
         position: absolute;
         right: 20px;
         z-index: 1;
-
+        top: 22px;
         align-self: center;
         background-image: url("images/icon-menu.svg");
         background-size: contain;
@@ -293,8 +320,13 @@ body {
         opacity: 0;
         height: 100vh;
         width: 60%;
-        transform: translateX(100);
+        transform: translateX(100px);
         transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    }
+    .dropdown-menu {
+        transition: none;
+        flex-direction: column;
+        gap: 30px;
     }
     .active > .mobile-menu {
         background-image: url("images/icon-close-menu.svg")
@@ -302,6 +334,36 @@ body {
 
     .active > .mobile-menu + .pop-out-menu {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0px);
     }
+
+    .active > .left-section {
+        opacity: 1;
+        pointer-events: auto;
+
+        align-self: flex-end;
+        transform: translateX(0px);
+    }
+    .active > .right-section {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0px);
+        position: relative;
+        margin-left: 0;
+        gap: 15px;
+
+
+    }
+
+    .active > .left-section > .dropdown.active > .dropdown-button + .dropdown-menu {
+        display: block;
+        padding-bottom: 0;
+        transition: none;
+        box-shadow: none;
+        position: relative;
+        top: 0;
+        z-index: 2;
+    }
+
+
 }

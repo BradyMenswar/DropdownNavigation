@@ -20,7 +20,8 @@
   </style>
 </head>
 <body>
-  <nav class="main-nav-bar">
+  <nav>
+    <div class="main-nav-bar" data-mobile-menu>
     <img src="images/logo.svg" alt="snap">
     <div class="left-section">
      
@@ -57,9 +58,15 @@
           <span class="arrow"></span>
         </button>
         <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">History</a>
-              <a class="dropdown-item" href="#">Our Team</a>
-              <a class="dropdown-item" href="#">Blog</a>
+          <div class="dropdown-item-container">
+            <a class="dropdown-item" href="#">History</a>
+          </div>
+          <div class="dropdown-item-container">
+            <a class="dropdown-item" href="#">Our Team</a>
+          </div>
+          <div class="dropdown-item-container">
+            <a class="dropdown-item" href="#">Blog</a>
+          </div>
         </div>
       </div>
       <a class="nav-link" href="#">Careers</a>
@@ -69,15 +76,16 @@
       <a class="nav-link" href="">Login</a>
       <button class="register-button">Register</button>
     </div>
-    <div data-dropdown>
-      <div class="mobile-menu" data-dropdown-button></div>
+    
+      <div class="mobile-menu" data-mobile-button></div>
       <div class="pop-out-menu"></div>
     </div>
     
   </nav>
   <main class="container">
     <div class="content">
-      <h1>Make remote work</h1>
+      <h1>Make
+remote work</h1>
       <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
       <button class="learn-more">Learn more</button>
       <div class="company-images">
